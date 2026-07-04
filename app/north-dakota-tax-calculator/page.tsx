@@ -56,6 +56,17 @@ const webAppSchema = {
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
 }
 
+const howToSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'How to Calculate North Dakota State Income Tax',
+  step: [
+    { '@type': 'HowToStep', name: 'Enter your income and filing status', text: 'North Dakota is pre-selected as your state. Enter your annual income and select your federal filing status (Single, Married Jointly, Head of Household).' },
+    { '@type': 'HowToStep', name: 'View your North Dakota state tax estimate', text: 'See your estimated North Dakota state income tax (2.5% top rate), your federal income tax under 2026 OBBBA brackets, and your combined effective tax rate.' },
+    { '@type': 'HowToStep', name: 'Compare with other states', text: 'The calculator shows how your North Dakota tax compares to no-income-tax states and the national average, helping you understand your total tax burden.' },
+  ],
+}
+
 const trustSignals = ['📋 2026 Updated', '⚡ Instant', '🔒 Private', '✓ Free']
 
 export default function NorthDakotaTaxCalculatorPage() {
@@ -63,6 +74,7 @@ export default function NorthDakotaTaxCalculatorPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema).replace(/</g, '\\u003c') }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema).replace(/</g, '\\u003c') }} />
 
       <section className="relative bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/herobgtc.webp')" }}>
         <div className="absolute inset-0 bg-black/55" />

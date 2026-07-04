@@ -9,9 +9,21 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 }
 
+const webAppSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: 'taxcalculators.app',
+  url: 'https://taxcalculators.app',
+  description: 'Free 2026 tax calculators for federal income tax, paycheck, self-employment, capital gains, W-4 withholding, and all 50 state income taxes.',
+  applicationCategory: 'FinanceApplication',
+  operatingSystem: 'Any',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+}
+
 export default function PrivacyPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema).replace(/</g, '\\u003c') }} />
       <section className="relative bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/herobgtc.webp')" }}>
         <div className="absolute inset-0 bg-black/55" />
         <div className="relative z-10 pb-10">

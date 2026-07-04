@@ -136,6 +136,17 @@ const webAppSchema = {{
   offers: {{ '@type': 'Offer', price: '0', priceCurrency: 'USD' }},
 }}
 
+const howToSchema = {{
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'How to Calculate {name} State Income Tax',
+  step: [
+    {{ '@type': 'HowToStep', name: 'Enter your income and filing status', text: '{name} is pre-selected as your state. Enter your annual income and select your federal filing status (Single, Married Jointly, Head of Household).' }},
+    {{ '@type': 'HowToStep', name: 'View your {name} state tax estimate', text: 'See your estimated {name} state income tax ({rate_display}), your federal income tax under 2026 OBBBA brackets, and your combined effective tax rate.' }},
+    {{ '@type': 'HowToStep', name: 'Compare with other states', text: 'The calculator shows how your {name} tax compares to no-income-tax states and the national average, helping you understand your total tax burden.' }},
+  ],
+}}
+
 const trustSignals = ['📋 2026 Updated', '⚡ Instant', '🔒 Private', '✓ Free']
 
 export default function {func_name}() {{
@@ -143,6 +154,7 @@ export default function {func_name}() {{
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{{{ __html: JSON.stringify(jsonLd).replace(/</g, '\\\\u003c') }}}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{{{ __html: JSON.stringify(webAppSchema).replace(/</g, '\\\\u003c') }}}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{{{ __html: JSON.stringify(howToSchema).replace(/</g, '\\\\u003c') }}}} />
 
       <section className="relative bg-cover bg-center bg-no-repeat" style={{{{ backgroundImage: "url('/herobgtc.webp')" }}}}>
         <div className="absolute inset-0 bg-black/55" />

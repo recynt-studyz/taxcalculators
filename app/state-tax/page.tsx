@@ -111,6 +111,33 @@ export default function StateTaxPage() {
             </p>
           </div>
           <div className="pb-10"><FAQ questions={faqs} /></div>
+
+          <div className="mb-10">
+            <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-4">State income tax calculators — all 50 states</h2>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2">
+              {[
+                ['Alabama','alabama'],['Alaska','alaska'],['Arizona','arizona'],['Arkansas','arkansas'],['California','california'],
+                ['Colorado','colorado'],['Connecticut','connecticut'],['Delaware','delaware'],['Florida','florida'],['Georgia','georgia'],
+                ['Hawaii','hawaii'],['Idaho','idaho'],['Illinois','illinois'],['Indiana','indiana'],['Iowa','iowa'],
+                ['Kansas','kansas'],['Kentucky','kentucky'],['Louisiana','louisiana'],['Maine','maine'],['Maryland','maryland'],
+                ['Massachusetts','massachusetts'],['Michigan','michigan'],['Minnesota','minnesota'],['Mississippi','mississippi'],['Missouri','missouri'],
+                ['Montana','montana'],['Nebraska','nebraska'],['Nevada','nevada'],['New Hampshire','new-hampshire'],['New Jersey','new-jersey'],
+                ['New Mexico','new-mexico'],['New York','new-york'],['North Carolina','north-carolina'],['North Dakota','north-dakota'],['Ohio','ohio'],
+                ['Oklahoma','oklahoma'],['Oregon','oregon'],['Pennsylvania','pennsylvania'],['Rhode Island','rhode-island'],['South Carolina','south-carolina'],
+                ['South Dakota','south-dakota'],['Tennessee','tennessee'],['Texas','texas'],['Utah','utah'],['Vermont','vermont'],
+                ['Virginia','virginia'],['Washington','washington'],['West Virginia','west-virginia'],['Wisconsin','wisconsin'],['Wyoming','wyoming'],
+              ].map(([name, slug]) => (
+                <a
+                  key={slug}
+                  href={`/${slug}-tax-calculator`}
+                  className="text-xs text-center px-2 py-2 rounded-lg border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-[#1e3a5f] hover:text-[#1e3a5f] dark:hover:text-blue-400 transition-colors"
+                >
+                  {name}
+                </a>
+              ))}
+            </div>
+          </div>
+
           <div className="pb-6"><AdBanner slot="3333333333" /></div>
         </div>
       </section>

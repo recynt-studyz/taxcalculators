@@ -8,7 +8,7 @@ const inter = Inter({ variable: '--font-inter', subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'Tax Calculators 2026 — Free Federal & State Tax Tools',
   description:
-    'Free 2026 tax calculators for federal income tax, paycheck, self-employment tax, capital gains, W-4 withholding and all 50 state income taxes. Updated for the One Big Beautiful Bill Act.',
+    'Free 2026 tax calculators for income tax, paycheck, self-employment, capital gains, W-4 withholding and all 50 state income taxes. Updated for OBBBA.',
   keywords: [
     'tax calculator',
     'income tax calculator 2026',
