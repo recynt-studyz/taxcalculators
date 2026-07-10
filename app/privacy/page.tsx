@@ -52,7 +52,7 @@ export default function PrivacyPage() {
 
           <div>
             <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Google AdSense</h2>
-            <p>We display advertisements through Google AdSense (publisher ID: ca-pub-8792838105001561). Google may use cookies and similar technologies to show you relevant ads based on your browsing activity. Google&apos;s privacy policy governs this data use. You can opt out of personalized ads through Google&apos;s ad settings.</p>
+            <p>We display advertisements through Google AdSense (publisher ID: ca-pub-5035661017594256). Google may use cookies and similar technologies to show you relevant ads based on your browsing activity. Google&apos;s privacy policy governs this data use. You can opt out of personalized ads through Google&apos;s ad settings.</p>
           </div>
 
           <div>
