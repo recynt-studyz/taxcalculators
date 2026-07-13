@@ -122,6 +122,61 @@ export default function NorthDakotaTaxCalculatorPage() {
             </a>
           </div>
 
+          <div className="mb-10">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">How North Dakota State Income Tax Works</h2>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+              North Dakota uses a 2.5% top rate state income tax structure. Like most states, North Dakota starts its calculation from your federal Adjusted Gross Income (AGI), then applies state-specific adjustments — subtracting income North Dakota excludes from taxation (such as certain pension or Social Security income) and adding back any income North Dakota taxes that the federal government does not. After adjustments, the North Dakota standard deduction is applied, then the 2.5% top rate is applied to arrive at state taxable income.
+            </p>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+              North Dakota income tax is collected through employer paycheck withholding for W-2 employees and through quarterly estimated payments for self-employed residents and those with significant non-wage income. The North Dakota state return is generally due April 15, aligned with federal returns. Part-year residents and nonresidents who earn income sourced in North Dakota must also file a North Dakota return for that income portion.
+            </p>
+            <div className="bg-gray-100 dark:bg-gray-800 rounded-xl px-4 py-3 mb-4 text-sm font-mono text-gray-800 dark:text-gray-200">
+              State Tax = (North Dakota taxable income) x 2.5% top rate - State credits
+            </div>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+              Your North Dakota state income taxes are deductible on your federal Schedule A as part of the SALT (State and Local Tax) deduction, capped at $40,400 in 2026 under OBBBA. At the 22% federal bracket, paying $829 in North Dakota state income tax generates approximately $182 in federal tax savings, reducing the true net cost of your North Dakota taxes to about $647 for itemizing taxpayers.
+            </p>
+          </div>
+
+          <div className="mb-10">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Worked Example: $75,000 Income in North Dakota</h2>
+            <div className="bg-amber-50 dark:bg-amber-950/20 border border-amber-100 dark:border-amber-900/40 rounded-2xl p-6">
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                Jordan is a single filer earning $75,000 in North Dakota. This shows how federal and North Dakota state income tax are calculated together.
+              </p>
+              <div className="space-y-1 text-sm text-gray-700 dark:text-gray-300 mb-4 font-mono bg-white/60 dark:bg-black/20 rounded-xl px-4 py-3">
+                <div>Gross income:                         $75,000</div>
+                <div>Federal standard deduction:          -$15,750</div>
+                <div>Federal taxable income:               $59,250</div>
+                <div>Federal income tax:                    $7,949</div>
+                <div>North Dakota state tax (estimated 1.4% effective rate (top bracket: 2.5%)):  $829</div>
+                <div className="font-bold pt-1">Total (federal + North Dakota state):        $8,778</div>
+                <div>Combined effective rate:                11.7%</div>
+              </div>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                Moving to a no-income-tax state (Texas, Florida, Nevada, or Wyoming) would save Jordan approximately $829/year ($69/month) in state income taxes. However, no-income-tax states often fund services through higher property taxes, sales taxes, or other fees, so a complete comparison requires evaluating all taxes together, not just income tax.
+              </p>
+            </div>
+          </div>
+
+          <div className="mb-10">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Key Factors That Affect Your North Dakota Tax</h2>
+            <ul className="space-y-5">
+              <li>
+                <p className="font-semibold text-gray-900 dark:text-white mb-1">North Dakota Tax Rate and Annual Filing</p>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">North Dakota residents earning above the state filing threshold must file a North Dakota income tax return annually, typically due April 15. The 2.5% top rate applies after North Dakota-specific deductions and any state tax credits. Employers withhold North Dakota state income tax from employee paychecks throughout the year using North Dakota withholding tables, and any balance owed or refund due is settled when the annual state return is filed. Self-employed North Dakota residents make quarterly estimated payments to the state in addition to their federal quarterly estimated tax payments.</p>
+              </li>
+              <li>
+                <p className="font-semibold text-gray-900 dark:text-white mb-1">Federal SALT Deduction Reduces Net State Tax Cost</p>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">State income taxes paid in North Dakota reduce your federal taxable income through the SALT deduction (capped at $40,400 in 2026 under OBBBA). For a North Dakota resident in the 22% federal bracket paying $829 in state income tax, the SALT deduction recovers approximately $182 in federal taxes, so the true after-federal-benefit cost of North Dakota state income tax is about $647. This offset only benefits taxpayers who itemize deductions on federal Schedule A rather than taking the standard deduction.</p>
+              </li>
+              <li>
+                <p className="font-semibold text-gray-900 dark:text-white mb-1">Total Tax Burden: State Income Tax Is One Piece</p>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">State income tax is one component of your total tax burden in North Dakota. Property taxes, local income taxes (in some North Dakota cities and counties), and state and local sales taxes also contribute to your overall cost of living. When comparing North Dakota to other states, evaluate all tax types together rather than income tax in isolation. Use the calculator above to see your combined federal and North Dakota state effective rate at your specific income level.</p>
+              </li>
+            </ul>
+          </div>
+
           <div className="pb-10">
             <FAQ questions={faqs} />
           </div>

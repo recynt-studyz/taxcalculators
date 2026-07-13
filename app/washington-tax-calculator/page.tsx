@@ -122,6 +122,61 @@ export default function WashingtonTaxCalculatorPage() {
             </a>
           </div>
 
+          <div className="mb-10">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">How Washington State Income Tax Works</h2>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+              Washington is one of nine states with no state income tax. Residents pay zero state income tax on wages, salary, self-employment income, or most investment income. There is no Washington state income tax withholding from employee paychecks, no Washington income tax return to file for wages and salary, and no quarterly estimated state income tax payments required for Washington-source income.
+            </p>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+              Washington residents experience no state income tax withholding from their paychecks — employers only withhold federal income tax and FICA taxes (Social Security and Medicare). There is no Washington income tax return, no Washington tax account to manage, and no state income tax compliance burden for most Washington residents. Filing means one return only: your federal Form 1040 with the IRS.
+            </p>
+            <div className="bg-gray-100 dark:bg-gray-800 rounded-xl px-4 py-3 mb-4 text-sm font-mono text-gray-800 dark:text-gray-200">
+              Income Tax in Washington = Federal Income Tax only (State Income Tax = $0)
+            </div>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+              Because Washington residents have no state income tax, the SALT deduction on federal Schedule A for Washington residents consists primarily of property taxes rather than state income taxes. The $40,400 SALT cap (2026) is therefore less likely to be a binding constraint for Washington residents compared to high-income-tax states. For Washington itemizers, deductible SALT is primarily property taxes and potentially general sales taxes.
+            </p>
+          </div>
+
+          <div className="mb-10">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Worked Example: $75,000 Income in Washington</h2>
+            <div className="bg-amber-50 dark:bg-amber-950/20 border border-amber-100 dark:border-amber-900/40 rounded-2xl p-6">
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                Jordan is a single filer earning $75,000 in Washington. Since Washington has no state income tax, Jordan pays federal income tax only.
+              </p>
+              <div className="space-y-1 text-sm text-gray-700 dark:text-gray-300 mb-4 font-mono bg-white/60 dark:bg-black/20 rounded-xl px-4 py-3">
+                <div>Gross income:                         $75,000</div>
+                <div>Federal standard deduction:          -$15,750</div>
+                <div>Federal taxable income:               $59,250</div>
+                <div>Federal income tax:                    $7,949</div>
+                <div>Washington state income tax:                      $0</div>
+                <div className="font-bold pt-1">Total income tax (federal only):          $7,949</div>
+                <div>Effective rate:                              10.6%</div>
+              </div>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                For comparison, a $75,000 earner in California pays approximately $3,259/year in state income taxes ($271/month extra). In Oregon or Minnesota, state taxes add $3,000-$4,500+/year at this income level. Washington's zero income tax saves residents these amounts annually, though property taxes, sales taxes, and cost of living differ between states and factor into a complete financial comparison.
+              </p>
+            </div>
+          </div>
+
+          <div className="mb-10">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Key Factors That Affect Your Washington Tax</h2>
+            <ul className="space-y-5">
+              <li>
+                <p className="font-semibold text-gray-900 dark:text-white mb-1">How Washington Funds Government Without Income Tax</p>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">Washington funds state services through revenue sources other than income taxes, such as sales taxes, property taxes, excise taxes, and fees. This means Washington residents avoid the income tax compliance burden entirely for state purposes. However, evaluating your total tax burden in Washington requires looking at all tax types together — property taxes in some no-income-tax states are among the highest in the nation, and high sales taxes can offset income tax savings for lower-income households.</p>
+              </li>
+              <li>
+                <p className="font-semibold text-gray-900 dark:text-white mb-1">Federal Taxes Are Your Only Income Tax Obligation</p>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">As a Washington resident, your only income tax filing is your federal Form 1040. You use the same 2026 federal brackets (10%-37%), the same standard deduction ($15,750 single, $31,500 MFJ), and the same federal credits as all Americans. Washington residency does not affect any federal tax calculation. There is no state return to file, no state withholding to reconcile, and no state tax agency interaction for income tax purposes for most Washington residents.</p>
+              </li>
+              <li>
+                <p className="font-semibold text-gray-900 dark:text-white mb-1">Evaluate Your Complete Tax Burden, Not Just Income Tax</p>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">While Washington's zero income tax is a genuine financial benefit, it is only part of the total tax picture. Property taxes, sales taxes, and the cost of state services vary significantly. When comparing Washington to states with income tax for financial planning or relocation decisions, factor all major tax types and the cost of living together for the most accurate after-tax comparison at your specific income level and lifestyle.</p>
+              </li>
+            </ul>
+          </div>
+
           <div className="pb-10">
             <FAQ questions={faqs} />
           </div>

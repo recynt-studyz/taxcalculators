@@ -110,6 +110,79 @@ export default function PaycheckPage() {
               Your paycheck withholding for 2026 is governed by the One Big Beautiful Bill Act and your W-4 elections. Federal income tax withholding is estimated by annualizing each paycheck, applying the 2026 tax brackets, and dividing by pay periods. FICA taxes include Social Security (6.2% up to $184,500) and Medicare (1.45% on all wages). Pre-tax deductions like 401(k) contributions and health insurance premiums reduce your taxable wages, effectively giving you a tax break. State income tax withholding varies by state — nine states have no income tax at all. Understanding your paycheck breakdown helps you optimize W-4 withholding to avoid owing taxes or receiving a large refund.
             </p>
           </div>
+          {/* How It Works */}
+          <div className="mb-10">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">How Paycheck Withholding Is Calculated</h2>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+              Paycheck withholding is calculated using the IRS Percentage Method from Publication 15-T, applied every pay period. Your employer follows a precise sequence. First, gross wages are determined for the pay period — annual salary divided by the number of pay periods (26 for biweekly, 24 for semimonthly, 12 for monthly, 52 for weekly). Second, pre-tax deductions are subtracted from gross wages: 401(k) contributions, health insurance premiums, HSA and FSA contributions, and commuter benefits all reduce the taxable wage base before any tax is computed. Third, the remaining wages are annualized and the W-4 Step 3 dependent credits are applied annually. Fourth, the IRS withholding tax tables are applied to compute estimated annual federal income tax, which is then divided by pay periods to get the per-check withholding amount.
+            </p>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+              FICA taxes are computed separately and are straightforward percentages: Social Security at 6.2% on cumulative wages up to the $184,500 wage base, and Medicare at 1.45% on all wages with no cap. State income tax withholding follows each state&apos;s own withholding tables. The full formula is:
+            </p>
+            <div className="bg-gray-100 dark:bg-gray-800 rounded-xl px-4 py-3 mb-4 text-sm font-mono text-gray-800 dark:text-gray-200">
+              Net Pay = Gross Pay − Pre-Tax Deductions − Federal Withholding − Social Security (6.2%) − Medicare (1.45%) − State Tax − Post-Tax Deductions
+            </div>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+              A critical distinction: pre-tax deductions reduce your taxable wages before withholding is calculated, so a $500 401(k) contribution does not reduce take-home pay by $500. At the 22% bracket, it reduces take-home by roughly $355 because $145 of that $500 would have gone to taxes anyway.
+            </p>
+          </div>
+
+          {/* Worked Example */}
+          <div className="mb-10">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Worked Example: $75,000 Salary, Biweekly Pay</h2>
+            <div className="bg-amber-50 dark:bg-amber-950/20 border border-amber-100 dark:border-amber-900/40 rounded-2xl p-6">
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                Marcus earns $75,000 annually, paid biweekly (26 pay periods), single filer, contributes $500 per paycheck to a traditional 401(k), and claims two children under 17 on his W-4 Step 3 ($4,400 total).
+              </p>
+              <div className="space-y-1 text-sm text-gray-700 dark:text-gray-300 mb-4 font-mono bg-white/60 dark:bg-black/20 rounded-xl px-4 py-3">
+                <div>Gross per paycheck ($75k ÷ 26):   $2,884.62</div>
+                <div>Pre-tax 401(k):                     −$500.00</div>
+                <div>Taxable wages:                    $2,384.62</div>
+                <div>Annualized taxable wages:           $61,999</div>
+                <div>Less standard deduction:           −$15,750</div>
+                <div>Less Step 3 credit (annual):        −$4,400</div>
+                <div>Annualized withholding base:        $41,849</div>
+                <div className="pt-2">Federal withholding per check:       $177</div>
+                <div>Social Security (6.2%):             $179</div>
+                <div>Medicare (1.45%):                    $42</div>
+                <div className="font-bold pt-1">Estimated net take-home:         ~$1,987</div>
+              </div>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
+                The $500 biweekly 401(k) contribution only reduces Marcus&apos;s take-home by about $355 — not $500 — because $145 of that $500 would have been paid in federal and state taxes anyway. His annual 401(k) savings of $13,000 costs him only about $9,230 in actual take-home pay reduction.
+              </p>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                If Marcus forgot to enter his two children on W-4 Step 3, his federal withholding would be about $346/check instead of $177/check — he&apos;d over-withhold by $4,394 annually and receive a large refund instead of having that money each paycheck throughout the year.
+              </p>
+            </div>
+          </div>
+
+          {/* Key Factors */}
+          <div className="mb-10">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Key Factors That Affect Your Take-Home Pay</h2>
+            <ul className="space-y-5">
+              <li>
+                <p className="font-semibold text-gray-900 dark:text-white mb-1">Pre-tax deductions (401k, HSA, health insurance)</p>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">Every dollar contributed pre-tax to a 401(k), HSA, or employer health insurance reduces both federal and state taxable wages. The 2026 401(k) limit is $23,500 ($31,000 if age 50+). At the 22% federal bracket plus a 5% state rate, maximizing the 401(k) saves roughly $6,345 in combined income taxes — meaning $23,500 in retirement savings only reduces take-home pay by about $17,155.</p>
+              </li>
+              <li>
+                <p className="font-semibold text-gray-900 dark:text-white mb-1">W-4 Step 3 dependent credits</p>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">The W-4 Step 3 child credit ($2,200 per qualifying child under 17 in 2026) directly reduces annual withholding dollar-for-dollar. For each child entered, your employer reduces your annual withholding by $2,200, spread evenly across your paychecks. With two children, that&apos;s $169 more per biweekly paycheck throughout the year rather than waiting for a lump-sum refund at tax time.</p>
+              </li>
+              <li>
+                <p className="font-semibold text-gray-900 dark:text-white mb-1">Pay frequency</p>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">Pay frequency affects paycheck size but not annual take-home. Biweekly (26 checks/year) results in smaller individual checks than semimonthly (24 checks), but two months per year have three biweekly checks. Monthly pay (12 checks) gives the largest individual checks but requires more careful monthly budgeting. Your annual net pay is the same regardless of frequency for identical withholding elections.</p>
+              </li>
+              <li>
+                <p className="font-semibold text-gray-900 dark:text-white mb-1">Social Security wage base cap</p>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">The 2026 Social Security wage base is $184,500. Once your cumulative wages for the year cross this threshold, the 6.2% Social Security withholding stops for all remaining paychecks. For an employee earning $220,000, this means paychecks from October onward are $11,439 higher annually than if Social Security continued — a meaningful boost in second-half take-home pay for high earners.</p>
+              </li>
+              <li>
+                <p className="font-semibold text-gray-900 dark:text-white mb-1">State income tax</p>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">Nine states have zero income tax withholding (Alaska, Florida, Nevada, New Hampshire, South Dakota, Tennessee, Texas, Washington, Wyoming). High-tax states like California (up to 13.3%) and New York (up to 10.9%) can reduce monthly take-home pay by $600–$1,500+ for middle and high earners compared to living in a no-income-tax state with otherwise identical circumstances.</p>
+              </li>
+            </ul>
+          </div>
+
           <div className="pb-10"><FAQ questions={faqs} /></div>
           <div className="pb-6"><AdBanner slot="3333333333" /></div>
         </div>

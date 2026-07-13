@@ -135,6 +135,75 @@ export default function Home() {
             </p>
           </div>
 
+          {/* How It Works */}
+          <div className="mb-10">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">How Federal Income Tax Is Calculated</h2>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+              The U.S. federal income tax system uses a progressive bracket structure — meaning different portions of your income are taxed at different rates, not your entire income at one flat rate. The calculation follows five steps. First, add all gross income from every source: wages, salary, self-employment income, interest, dividends, capital gains, and rental income. Second, subtract above-the-line deductions to reach your Adjusted Gross Income (AGI): traditional 401(k) contributions (up to $23,500 in 2026), IRA deductions (up to $7,000), HSA contributions (up to $4,300), student loan interest (up to $2,500), and self-employed health insurance premiums. Third, subtract either the 2026 standard deduction ($15,750 single, $31,500 married filing jointly, $23,625 head of household) or your total itemized deductions — whichever is larger — to arrive at taxable income. Fourth, apply each bracket rate only to the income within that bracket's range. Fifth, subtract tax credits directly from your tax liability.
+            </p>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+              The core formula is: <strong className="text-gray-900 dark:text-white">Tax = Sum of (income in each bracket × bracket rate) − tax credits</strong>. Credits are more powerful than deductions because they reduce tax dollar-for-dollar rather than reducing the income that gets taxed. A $2,200 Child Tax Credit saves exactly $2,200 in tax, while a $2,200 deduction saves only $484 for someone in the 22% bracket.
+            </p>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+              The 2026 single filer brackets under the One Big Beautiful Bill Act: 10% on $0–$11,925 | 12% on $11,926–$48,475 | 22% on $48,476–$103,350 | 24% on $103,351–$197,300 | 32% on $197,301–$250,525 | 35% on $250,526–$626,350 | 37% above $626,350. Married filing jointly brackets are approximately double these thresholds, which is why joint filers with similar combined income often pay less than two single filers with the same individual incomes.
+            </p>
+          </div>
+
+          {/* Worked Example */}
+          <div className="mb-10">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Worked Example: Single Filer, $85,000 Salary</h2>
+            <div className="bg-amber-50 dark:bg-amber-950/20 border border-amber-100 dark:border-amber-900/40 rounded-2xl p-6">
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                Sarah is a software engineer in Denver earning $85,000 annually as a single filer. She contributes $10,000/year to her traditional 401(k) and pays $3,600/year in student loan interest.
+              </p>
+              <div className="space-y-1 text-sm text-gray-700 dark:text-gray-300 mb-4 font-mono bg-white/60 dark:bg-black/20 rounded-xl px-4 py-3">
+                <div>Gross income:                  $85,000</div>
+                <div>401(k) deduction:             −$10,000</div>
+                <div>Student loan interest:          −$3,600</div>
+                <div>AGI:                           $71,400</div>
+                <div>Standard deduction:            −$15,750</div>
+                <div>Taxable income:                $55,650</div>
+                <div className="pt-2">10% × $11,925 =              $1,192.50</div>
+                <div>12% × $36,550 =              $4,386.00</div>
+                <div>22% × $7,175 =               $1,578.50</div>
+                <div className="font-bold pt-1">Federal income tax:           $7,157</div>
+              </div>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
+                Sarah&apos;s effective tax rate is $7,157 ÷ $85,000 = <strong className="text-gray-900 dark:text-white">8.4%</strong>, even though her marginal rate is <strong className="text-gray-900 dark:text-white">22%</strong>. Without the $10,000 401(k) contribution, her taxable income rises to $65,650 and her federal tax increases to $9,353 — a $2,196 difference. That $10,000 contribution only reduces take-home pay by about $7,804 because $2,196 of it came from tax savings.
+              </p>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                If Sarah adds two qualifying children to her situation, the $4,400 in Child Tax Credits would bring her tax down from $7,157 to $2,757 — a 61% reduction in her federal tax bill. This illustrates why credits are so much more powerful than equivalent deductions.
+              </p>
+            </div>
+          </div>
+
+          {/* Key Factors */}
+          <div className="mb-10">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Key Factors That Affect Your Federal Tax</h2>
+            <ul className="space-y-5">
+              <li>
+                <p className="font-semibold text-gray-900 dark:text-white mb-1">Filing status</p>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">Married Filing Jointly brackets are roughly double single filer brackets, so spouses with significantly different incomes often see a "marriage bonus" — lower combined tax than filing as two singles. Head of Household filers get wider brackets than single filers. If you qualify for Head of Household (unmarried with a qualifying dependent), it can save $1,000–$3,000+ annually compared to single status.</p>
+              </li>
+              <li>
+                <p className="font-semibold text-gray-900 dark:text-white mb-1">Standard deduction vs. itemized deductions</p>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">The 2026 standard deduction ($15,750 single, $31,500 MFJ) is high enough that roughly 90% of filers take it. If you own a home with significant mortgage interest, pay high state and local taxes (SALT, capped at $40,400 in 2026), or make large charitable contributions, your itemized deductions may exceed the standard deduction. The calculator lets you compare both options.</p>
+              </li>
+              <li>
+                <p className="font-semibold text-gray-900 dark:text-white mb-1">Pre-tax retirement and HSA contributions</p>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">Every dollar contributed to a traditional 401(k) or IRA reduces taxable income dollar-for-dollar. At the 22% bracket, a $10,000 401(k) contribution saves $2,200 in federal income tax — and typically reduces state income tax as well. HSA contributions (up to $4,300 single / $8,550 family in 2026) are triple-tax-advantaged: pre-tax contribution, tax-free growth, tax-free withdrawal for medical expenses.</p>
+              </li>
+              <li>
+                <p className="font-semibold text-gray-900 dark:text-white mb-1">Tax credits vs. deductions</p>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">Credits reduce your tax liability directly, making them worth far more than equivalent deductions. The Child Tax Credit ($2,200 per qualifying child in 2026, up to $1,700 refundable), EITC (up to $8,231 for three or more children), and education credits can dramatically change your net tax owed. Refundable credits can even generate a refund beyond your total withholding.</p>
+              </li>
+              <li>
+                <p className="font-semibold text-gray-900 dark:text-white mb-1">Capital gains and other income types</p>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">Long-term capital gains (assets held over one year) are taxed at preferential 0%, 15%, or 20% rates — significantly lower than ordinary income rates. Self-employment income carries an additional 15.3% self-employment tax. Dividend income is taxed at qualified dividend rates (same as long-term capital gains). Each income type has its own rules, and combining them can affect which brackets your ordinary income reaches.</p>
+              </li>
+            </ul>
+          </div>
+
           <div className="pb-10">
             <FAQ questions={faqs} />
           </div>

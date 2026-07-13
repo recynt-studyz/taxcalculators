@@ -122,6 +122,61 @@ export default function MichiganTaxCalculatorPage() {
             </a>
           </div>
 
+          <div className="mb-10">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">How Michigan State Income Tax Works</h2>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+              Michigan uses a 4.25% flat rate state income tax structure. Like most states, Michigan starts its calculation from your federal Adjusted Gross Income (AGI), then applies state-specific adjustments — subtracting income Michigan excludes from taxation (such as certain pension or Social Security income) and adding back any income Michigan taxes that the federal government does not. After adjustments, the Michigan standard deduction is applied, then the 4.25% flat rate is applied to arrive at state taxable income.
+            </p>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+              Michigan income tax is collected through employer paycheck withholding for W-2 employees and through quarterly estimated payments for self-employed residents and those with significant non-wage income. The Michigan state return is generally due April 15, aligned with federal returns. Part-year residents and nonresidents who earn income sourced in Michigan must also file a Michigan return for that income portion.
+            </p>
+            <div className="bg-gray-100 dark:bg-gray-800 rounded-xl px-4 py-3 mb-4 text-sm font-mono text-gray-800 dark:text-gray-200">
+              State Tax = (Michigan taxable income) x 4.25% flat rate - State credits
+            </div>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+              Your Michigan state income taxes are deductible on your federal Schedule A as part of the SALT (State and Local Tax) deduction, capped at $40,400 in 2026 under OBBBA. At the 22% federal bracket, paying $2,518 in Michigan state income tax generates approximately $553 in federal tax savings, reducing the true net cost of your Michigan taxes to about $1,965 for itemizing taxpayers.
+            </p>
+          </div>
+
+          <div className="mb-10">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Worked Example: $75,000 Income in Michigan</h2>
+            <div className="bg-amber-50 dark:bg-amber-950/20 border border-amber-100 dark:border-amber-900/40 rounded-2xl p-6">
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                Jordan is a single filer earning $75,000 in Michigan. This shows how federal and Michigan state income tax are calculated together.
+              </p>
+              <div className="space-y-1 text-sm text-gray-700 dark:text-gray-300 mb-4 font-mono bg-white/60 dark:bg-black/20 rounded-xl px-4 py-3">
+                <div>Gross income:                         $75,000</div>
+                <div>Federal standard deduction:          -$15,750</div>
+                <div>Federal taxable income:               $59,250</div>
+                <div>Federal income tax:                    $7,949</div>
+                <div>Michigan state tax (at 4.25% flat rate):  $2,518</div>
+                <div className="font-bold pt-1">Total (federal + Michigan state):        $10,467</div>
+                <div>Combined effective rate:                14.0%</div>
+              </div>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                Moving to a no-income-tax state (Texas, Florida, Nevada, or Wyoming) would save Jordan approximately $2,518/year ($209/month) in state income taxes. However, no-income-tax states often fund services through higher property taxes, sales taxes, or other fees, so a complete comparison requires evaluating all taxes together, not just income tax.
+              </p>
+            </div>
+          </div>
+
+          <div className="mb-10">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Key Factors That Affect Your Michigan Tax</h2>
+            <ul className="space-y-5">
+              <li>
+                <p className="font-semibold text-gray-900 dark:text-white mb-1">Michigan Tax Rate and Annual Filing</p>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">Michigan residents earning above the state filing threshold must file a Michigan income tax return annually, typically due April 15. The 4.25% flat rate applies after Michigan-specific deductions and any state tax credits. Employers withhold Michigan state income tax from employee paychecks throughout the year using Michigan withholding tables, and any balance owed or refund due is settled when the annual state return is filed. Self-employed Michigan residents make quarterly estimated payments to the state in addition to their federal quarterly estimated tax payments.</p>
+              </li>
+              <li>
+                <p className="font-semibold text-gray-900 dark:text-white mb-1">Federal SALT Deduction Reduces Net State Tax Cost</p>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">State income taxes paid in Michigan reduce your federal taxable income through the SALT deduction (capped at $40,400 in 2026 under OBBBA). For a Michigan resident in the 22% federal bracket paying $2,518 in state income tax, the SALT deduction recovers approximately $553 in federal taxes, so the true after-federal-benefit cost of Michigan state income tax is about $1,965. This offset only benefits taxpayers who itemize deductions on federal Schedule A rather than taking the standard deduction.</p>
+              </li>
+              <li>
+                <p className="font-semibold text-gray-900 dark:text-white mb-1">Total Tax Burden: State Income Tax Is One Piece</p>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">State income tax is one component of your total tax burden in Michigan. Property taxes, local income taxes (in some Michigan cities and counties), and state and local sales taxes also contribute to your overall cost of living. When comparing Michigan to other states, evaluate all tax types together rather than income tax in isolation. Use the calculator above to see your combined federal and Michigan state effective rate at your specific income level.</p>
+              </li>
+            </ul>
+          </div>
+
           <div className="pb-10">
             <FAQ questions={faqs} />
           </div>

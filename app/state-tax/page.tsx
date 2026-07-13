@@ -110,6 +110,98 @@ export default function StateTaxPage() {
               State income taxes vary dramatically across the United States in 2026. Nine states have no income tax at all (Alaska, Florida, Nevada, New Hampshire, South Dakota, Tennessee, Texas, Washington, and Wyoming), while California has the nation&apos;s highest top marginal rate at 13.3%. Most states with income taxes use progressive bracket systems similar to the federal government, though some use flat rates. The state income tax you pay is partially deductible on your federal return via the SALT (State and Local Tax) deduction, capped at $40,400 in 2026. For individual state calculators with state-specific brackets, deductions, and tax credits, see the state-specific pages linked below.
             </p>
           </div>
+          {/* How It Works */}
+          <div className="mb-10">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">How State Income Tax Is Calculated</h2>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+              State income tax is calculated completely separately from federal income tax, though the two systems are interconnected. Most states begin their calculation with your federal Adjusted Gross Income (AGI) — the number from Line 11 of your federal Form 1040 — and then apply state-specific adjustments. Some states add back income that is federally excluded (like some municipal bond interest). Most states subtract income they choose not to tax, such as Social Security benefits, military retirement pay, or public pension income.
+            </p>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+              After adjustments, you subtract your state standard deduction (which is different from the federal deduction and varies widely by state) or state itemized deductions. The resulting state taxable income is then taxed using either a flat rate or progressive brackets specific to your state. States with flat rates (like Illinois at 4.95%, Pennsylvania at 3.07%, and Colorado at 4.4%) tax all income at one rate. States with progressive brackets (like California with 10 brackets up to 13.3%, or New York with brackets up to 10.9%) tax higher income at progressively higher rates.
+            </p>
+            <div className="bg-gray-100 dark:bg-gray-800 rounded-xl px-4 py-3 mb-4 text-sm font-mono text-gray-800 dark:text-gray-200">
+              State Tax = (Federal AGI ± State Adjustments − State Standard Deduction) × State Rate(s) − State Credits
+            </div>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+              Your state taxes paid are deductible on your federal Schedule A as part of the SALT (State and Local Tax) deduction, capped at $40,400 in 2026 under OBBBA. At the 22% federal bracket, paying $8,000 in state income tax generates $1,760 in federal tax savings, reducing the true net cost of state taxes by about 22%.
+            </p>
+          </div>
+
+          {/* Worked Example */}
+          <div className="mb-10">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Worked Example: Comparing State Tax Across Three States</h2>
+            <div className="bg-amber-50 dark:bg-amber-950/20 border border-amber-100 dark:border-amber-900/40 rounded-2xl p-6">
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                Emma is a single filer earning $80,000 as a remote software developer who can live anywhere. Here is how her state income tax differs across three states, with the same federal tax of approximately $9,155 in each scenario (federal is identical regardless of state).
+              </p>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm text-gray-700 dark:text-gray-300 mb-4">
+                  <thead>
+                    <tr className="border-b border-gray-200 dark:border-gray-700">
+                      <th className="text-left py-2 pr-4 font-semibold text-gray-900 dark:text-white">State</th>
+                      <th className="text-right py-2 pr-4 font-semibold text-gray-900 dark:text-white">State Rate</th>
+                      <th className="text-right py-2 pr-4 font-semibold text-gray-900 dark:text-white">Est. State Tax</th>
+                      <th className="text-right py-2 font-semibold text-gray-900 dark:text-white">Combined Eff. Rate</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-gray-100 dark:divide-gray-800">
+                    <tr>
+                      <td className="py-2 pr-4">Texas</td>
+                      <td className="text-right py-2 pr-4">0% (no income tax)</td>
+                      <td className="text-right py-2 pr-4">$0</td>
+                      <td className="text-right py-2">11.4%</td>
+                    </tr>
+                    <tr>
+                      <td className="py-2 pr-4">Colorado</td>
+                      <td className="text-right py-2 pr-4">4.4% flat</td>
+                      <td className="text-right py-2 pr-4">~$2,833</td>
+                      <td className="text-right py-2">15.0%</td>
+                    </tr>
+                    <tr>
+                      <td className="py-2 pr-4">California</td>
+                      <td className="text-right py-2 pr-4">~6% effective</td>
+                      <td className="text-right py-2 pr-4">~$4,800</td>
+                      <td className="text-right py-2">17.4%</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
+                Moving from California to Texas saves Emma approximately $4,800/year in state income taxes — or $400/month. Over 10 years (not accounting for investment growth), that&apos;s $48,000 in additional take-home pay. However, Texas has higher property taxes (averaging 1.6% vs. California&apos;s 0.73% effective rate), so homeowners must factor property tax into the real comparison.
+              </p>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                The federal SALT deduction partially offsets Emma&apos;s California state tax. At the 22% federal bracket, her $4,800 state tax reduces federal tax by $1,056 — so the net cost of California state tax is about $3,744, not $4,800. This SALT offset makes high-tax states slightly less disadvantageous for federal itemizers.
+              </p>
+            </div>
+          </div>
+
+          {/* Key Factors */}
+          <div className="mb-10">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Key Factors That Affect Your State Tax Bill</h2>
+            <ul className="space-y-5">
+              <li>
+                <p className="font-semibold text-gray-900 dark:text-white mb-1">Tax structure: flat rate vs. progressive brackets</p>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">Flat-rate states apply one rate to all taxable income, making the calculation predictable: Pennsylvania at 3.07% means every dollar of taxable income is taxed at 3.07%. Progressive states like California and New York use multiple brackets where only income above each threshold is taxed at the higher rate — similar to federal brackets. For middle-income earners, many progressive-bracket states have effective rates well below their top marginal rate.</p>
+              </li>
+              <li>
+                <p className="font-semibold text-gray-900 dark:text-white mb-1">Social Security and retirement income exclusions</p>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">Many states provide valuable exemptions that make them far more favorable for retirees than their headline rate suggests. Pennsylvania (3.07%) exempts all Social Security, pension income, and retirement account distributions — making it effectively a zero-income-tax state for most retirees despite its nominal rate. Illinois (4.95%) also exempts Social Security and most retirement income. This is why effective state tax rates for retirees can differ dramatically from the rates paid during working years in the same state.</p>
+              </li>
+              <li>
+                <p className="font-semibold text-gray-900 dark:text-white mb-1">Local income taxes stacked on state rates</p>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">Several states allow municipalities to impose local income taxes on top of state rates. New York City residents pay up to 3.876% city tax in addition to New York State&apos;s 4%–10.9%, creating a combined state+local rate up to 14.776% for high earners. Maryland counties add 2.25%–3.2% to the state rate. Indiana counties add 1%–2%. When comparing states, the combined state+local rate is the number that matters for take-home pay calculations.</p>
+              </li>
+              <li>
+                <p className="font-semibold text-gray-900 dark:text-white mb-1">Federal SALT deduction offset</p>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">The federal deduction for State and Local Taxes (SALT) is capped at $40,400 in 2026 under OBBBA — a significant increase from the prior $10,000 cap. For taxpayers who itemize, this deduction reduces federal taxable income by the amount of state income and property taxes paid, up to the cap. At the 22% federal bracket, each $1 of state tax paid generates 22 cents in federal tax savings — reducing the effective cost of state taxes meaningfully for federal itemizers.</p>
+              </li>
+              <li>
+                <p className="font-semibold text-gray-900 dark:text-white mb-1">Total tax burden beyond income tax</p>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">No-income-tax states are not necessarily low-tax states overall. Texas and Florida offset income tax revenue with high property taxes and sales taxes. Texas property taxes average 1.6%–2% of home value annually — significantly higher than California&apos;s Prop 13-capped rates. Washington has a 6.5% sales tax and a 7% capital gains excise tax on gains over $262,000. Tennessee has a 7% state sales tax. Evaluating the full tax environment — income, property, sales, and estate taxes — gives a complete picture of living costs in any state.</p>
+              </li>
+            </ul>
+          </div>
+
           <div className="pb-10"><FAQ questions={faqs} /></div>
 
           <div className="mb-10">

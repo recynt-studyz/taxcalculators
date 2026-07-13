@@ -122,6 +122,61 @@ export default function OregonTaxCalculatorPage() {
             </a>
           </div>
 
+          <div className="mb-10">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">How Oregon State Income Tax Works</h2>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+              Oregon uses a 9.9% top rate state income tax structure. Like most states, Oregon starts its calculation from your federal Adjusted Gross Income (AGI), then applies state-specific adjustments — subtracting income Oregon excludes from taxation (such as certain pension or Social Security income) and adding back any income Oregon taxes that the federal government does not. After adjustments, the Oregon standard deduction is applied, then the 9.9% top rate is applied to arrive at state taxable income.
+            </p>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+              Oregon income tax is collected through employer paycheck withholding for W-2 employees and through quarterly estimated payments for self-employed residents and those with significant non-wage income. The Oregon state return is generally due April 15, aligned with federal returns. Part-year residents and nonresidents who earn income sourced in Oregon must also file a Oregon return for that income portion.
+            </p>
+            <div className="bg-gray-100 dark:bg-gray-800 rounded-xl px-4 py-3 mb-4 text-sm font-mono text-gray-800 dark:text-gray-200">
+              State Tax = (Oregon taxable income) x 9.9% top rate - State credits
+            </div>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+              Your Oregon state income taxes are deductible on your federal Schedule A as part of the SALT (State and Local Tax) deduction, capped at $40,400 in 2026 under OBBBA. At the 22% federal bracket, paying $3,199 in Oregon state income tax generates approximately $703 in federal tax savings, reducing the true net cost of your Oregon taxes to about $2,496 for itemizing taxpayers.
+            </p>
+          </div>
+
+          <div className="mb-10">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Worked Example: $75,000 Income in Oregon</h2>
+            <div className="bg-amber-50 dark:bg-amber-950/20 border border-amber-100 dark:border-amber-900/40 rounded-2xl p-6">
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                Jordan is a single filer earning $75,000 in Oregon. This shows how federal and Oregon state income tax are calculated together.
+              </p>
+              <div className="space-y-1 text-sm text-gray-700 dark:text-gray-300 mb-4 font-mono bg-white/60 dark:bg-black/20 rounded-xl px-4 py-3">
+                <div>Gross income:                         $75,000</div>
+                <div>Federal standard deduction:          -$15,750</div>
+                <div>Federal taxable income:               $59,250</div>
+                <div>Federal income tax:                    $7,949</div>
+                <div>Oregon state tax (estimated 5.4% effective rate (top bracket: 9.9%)):  $3,199</div>
+                <div className="font-bold pt-1">Total (federal + Oregon state):        $11,148</div>
+                <div>Combined effective rate:                14.9%</div>
+              </div>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                Moving to a no-income-tax state (Texas, Florida, Nevada, or Wyoming) would save Jordan approximately $3,199/year ($266/month) in state income taxes. However, no-income-tax states often fund services through higher property taxes, sales taxes, or other fees, so a complete comparison requires evaluating all taxes together, not just income tax.
+              </p>
+            </div>
+          </div>
+
+          <div className="mb-10">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Key Factors That Affect Your Oregon Tax</h2>
+            <ul className="space-y-5">
+              <li>
+                <p className="font-semibold text-gray-900 dark:text-white mb-1">Oregon Tax Rate and Annual Filing</p>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">Oregon residents earning above the state filing threshold must file a Oregon income tax return annually, typically due April 15. The 9.9% top rate applies after Oregon-specific deductions and any state tax credits. Employers withhold Oregon state income tax from employee paychecks throughout the year using Oregon withholding tables, and any balance owed or refund due is settled when the annual state return is filed. Self-employed Oregon residents make quarterly estimated payments to the state in addition to their federal quarterly estimated tax payments.</p>
+              </li>
+              <li>
+                <p className="font-semibold text-gray-900 dark:text-white mb-1">Federal SALT Deduction Reduces Net State Tax Cost</p>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">State income taxes paid in Oregon reduce your federal taxable income through the SALT deduction (capped at $40,400 in 2026 under OBBBA). For a Oregon resident in the 22% federal bracket paying $3,199 in state income tax, the SALT deduction recovers approximately $703 in federal taxes, so the true after-federal-benefit cost of Oregon state income tax is about $2,496. This offset only benefits taxpayers who itemize deductions on federal Schedule A rather than taking the standard deduction.</p>
+              </li>
+              <li>
+                <p className="font-semibold text-gray-900 dark:text-white mb-1">Total Tax Burden: State Income Tax Is One Piece</p>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">State income tax is one component of your total tax burden in Oregon. Property taxes, local income taxes (in some Oregon cities and counties), and state and local sales taxes also contribute to your overall cost of living. When comparing Oregon to other states, evaluate all tax types together rather than income tax in isolation. Use the calculator above to see your combined federal and Oregon state effective rate at your specific income level.</p>
+              </li>
+            </ul>
+          </div>
+
           <div className="pb-10">
             <FAQ questions={faqs} />
           </div>

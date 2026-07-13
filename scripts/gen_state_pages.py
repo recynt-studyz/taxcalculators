@@ -76,6 +76,127 @@ for slug, name, abbr, rate, has_tax, rate_display, blurb in STATES:
         faq4_q = f"Is {name} a good state for high earners from a tax perspective?"
         faq4_a = f"Yes — with no state income tax, {name} is very favorable for high earners. A person earning $200,000 saves $8,000-$20,000 per year in state income taxes compared to living in a state with a 4-10% income tax. This makes {name} attractive for executives, business owners, high-income professionals, and retirees relocating from high-tax states."
 
+    # Pre-compute worked example numbers for a $75,000 single filer
+    ex_gross = 75000
+    ex_fed_taxable = 59250  # after $15,750 federal standard deduction
+    ex_fed_tax = 7949       # 10%*11925 + 12%*36550 + 22%*10775
+    ex_fed_eff = 10.6
+
+    if has_tax:
+        is_flat = 'flat' in rate_display.lower()
+        ex_eff_pct = rate if is_flat else round(rate * 0.55, 1)
+        ex_state_tax = int(ex_fed_taxable * ex_eff_pct / 100)
+        ex_rate_note = (f"at {rate}% flat rate" if is_flat
+                        else f"estimated {ex_eff_pct}% effective rate (top bracket: {rate}%)")
+        ex_combined = ex_fed_tax + ex_state_tax
+        ex_combined_eff = round(ex_combined / ex_gross * 100, 1)
+        ex_monthly = ex_state_tax // 12
+        ex_salt = int(ex_state_tax * 0.22)
+        ex_net = ex_state_tax - ex_salt
+        how_s1 = (f"{name} uses a {rate_display} state income tax structure. Like most states, {name} "
+                  f"starts its calculation from your federal Adjusted Gross Income (AGI), then applies "
+                  f"state-specific adjustments — subtracting income {name} excludes from taxation (such "
+                  f"as certain pension or Social Security income) and adding back any income {name} taxes "
+                  f"that the federal government does not. After adjustments, the {name} standard deduction "
+                  f"is applied, then the {rate_display} is applied to arrive at state taxable income.")
+        how_s2 = (f"{name} income tax is collected through employer paycheck withholding for W-2 employees "
+                  f"and through quarterly estimated payments for self-employed residents and those with "
+                  f"significant non-wage income. The {name} state return is generally due April 15, "
+                  f"aligned with federal returns. Part-year residents and nonresidents who earn income "
+                  f"sourced in {name} must also file a {name} return for that income portion.")
+        how_formula_text = f"State Tax = ({name} taxable income) x {rate_display} - State credits"
+        how_s3 = (f"Your {name} state income taxes are deductible on your federal Schedule A as part "
+                  f"of the SALT (State and Local Tax) deduction, capped at $40,400 in 2026 under OBBBA. "
+                  f"At the 22% federal bracket, paying ${ex_state_tax:,} in {name} state income tax "
+                  f"generates approximately ${ex_salt:,} in federal tax savings, reducing the true net "
+                  f"cost of your {name} taxes to about ${ex_net:,} for itemizing taxpayers.")
+        ex_intro = (f"Jordan is a single filer earning $75,000 in {name}. "
+                    f"This shows how federal and {name} state income tax are calculated together.")
+        ex_state_row = f"{name} state tax ({ex_rate_note}):  ${ex_state_tax:,}"
+        ex_combined_row = f"Total (federal + {name} state):        ${ex_combined:,}"
+        ex_eff_row = f"Combined effective rate:                {ex_combined_eff}%"
+        ex_note = (f"Moving to a no-income-tax state (Texas, Florida, Nevada, or Wyoming) "
+                   f"would save Jordan approximately ${ex_state_tax:,}/year (${ex_monthly}/month) "
+                   f"in state income taxes. However, no-income-tax states often fund services through "
+                   f"higher property taxes, sales taxes, or other fees, so a complete comparison "
+                   f"requires evaluating all taxes together, not just income tax.")
+        kf1_h = f"{name} Tax Rate and Annual Filing"
+        kf1_b = (f"{name} residents earning above the state filing threshold must file a {name} income "
+                 f"tax return annually, typically due April 15. The {rate_display} applies after "
+                 f"{name}-specific deductions and any state tax credits. Employers withhold {name} state "
+                 f"income tax from employee paychecks throughout the year using {name} withholding tables, "
+                 f"and any balance owed or refund due is settled when the annual state return is filed. "
+                 f"Self-employed {name} residents make quarterly estimated payments to the state in "
+                 f"addition to their federal quarterly estimated tax payments.")
+        kf2_h = "Federal SALT Deduction Reduces Net State Tax Cost"
+        kf2_b = (f"State income taxes paid in {name} reduce your federal taxable income through the "
+                 f"SALT deduction (capped at $40,400 in 2026 under OBBBA). For a {name} resident in "
+                 f"the 22% federal bracket paying ${ex_state_tax:,} in state income tax, the SALT "
+                 f"deduction recovers approximately ${ex_salt:,} in federal taxes, so the true "
+                 f"after-federal-benefit cost of {name} state income tax is about ${ex_net:,}. "
+                 f"This offset only benefits taxpayers who itemize deductions on federal Schedule A "
+                 f"rather than taking the standard deduction.")
+        kf3_h = "Total Tax Burden: State Income Tax Is One Piece"
+        kf3_b = (f"State income tax is one component of your total tax burden in {name}. Property taxes, "
+                 f"local income taxes (in some {name} cities and counties), and state and local sales "
+                 f"taxes also contribute to your overall cost of living. When comparing {name} to other "
+                 f"states, evaluate all tax types together rather than income tax in isolation. Use the "
+                 f"calculator above to see your combined federal and {name} state effective rate at your "
+                 f"specific income level.")
+    else:
+        ex_state_tax = 0
+        ex_combined = ex_fed_tax
+        ex_combined_eff = ex_fed_eff
+        ca_compare = 3259
+        ca_monthly = ca_compare // 12
+        how_s1 = (f"{name} is one of nine states with no state income tax. Residents pay zero state "
+                  f"income tax on wages, salary, self-employment income, or most investment income. "
+                  f"There is no {name} state income tax withholding from employee paychecks, no "
+                  f"{name} income tax return to file for wages and salary, and no quarterly estimated "
+                  f"state income tax payments required for {name}-source income.")
+        how_s2 = (f"{name} residents experience no state income tax withholding from their paychecks "
+                  f"— employers only withhold federal income tax and FICA taxes (Social Security and "
+                  f"Medicare). There is no {name} income tax return, no {name} tax account to manage, "
+                  f"and no state income tax compliance burden for most {name} residents. Filing means "
+                  f"one return only: your federal Form 1040 with the IRS.")
+        how_formula_text = f"Income Tax in {name} = Federal Income Tax only (State Income Tax = $0)"
+        how_s3 = (f"Because {name} residents have no state income tax, the SALT deduction on "
+                  f"federal Schedule A for {name} residents consists primarily of property taxes "
+                  f"rather than state income taxes. The $40,400 SALT cap (2026) is therefore less "
+                  f"likely to be a binding constraint for {name} residents compared to high-income-tax "
+                  f"states. For {name} itemizers, deductible SALT is primarily property taxes and "
+                  f"potentially general sales taxes.")
+        ex_intro = (f"Jordan is a single filer earning $75,000 in {name}. Since {name} has no state "
+                    f"income tax, Jordan pays federal income tax only.")
+        ex_state_row = f"{name} state income tax:                      $0"
+        ex_combined_row = f"Total income tax (federal only):          ${ex_combined:,}"
+        ex_eff_row = f"Effective rate:                              {ex_combined_eff}%"
+        ex_note = (f"For comparison, a $75,000 earner in California pays approximately ${ca_compare:,}/year "
+                   f"in state income taxes (${ca_monthly}/month extra). In Oregon or Minnesota, state taxes "
+                   f"add $3,000-$4,500+/year at this income level. {name}'s zero income tax saves residents "
+                   f"these amounts annually, though property taxes, sales taxes, and cost of living "
+                   f"differ between states and factor into a complete financial comparison.")
+        kf1_h = f"How {name} Funds Government Without Income Tax"
+        kf1_b = (f"{name} funds state services through revenue sources other than income taxes, such as "
+                 f"sales taxes, property taxes, excise taxes, and fees. This means {name} residents avoid "
+                 f"the income tax compliance burden entirely for state purposes. However, evaluating your "
+                 f"total tax burden in {name} requires looking at all tax types together — property taxes "
+                 f"in some no-income-tax states are among the highest in the nation, and high sales taxes "
+                 f"can offset income tax savings for lower-income households.")
+        kf2_h = f"Federal Taxes Are Your Only Income Tax Obligation"
+        kf2_b = (f"As a {name} resident, your only income tax filing is your federal Form 1040. You use "
+                 f"the same 2026 federal brackets (10%-37%), the same standard deduction ($15,750 single, "
+                 f"$31,500 MFJ), and the same federal credits as all Americans. {name} residency does not "
+                 f"affect any federal tax calculation. There is no state return to file, no state "
+                 f"withholding to reconcile, and no state tax agency interaction for income tax purposes "
+                 f"for most {name} residents.")
+        kf3_h = "Evaluate Your Complete Tax Burden, Not Just Income Tax"
+        kf3_b = (f"While {name}'s zero income tax is a genuine financial benefit, it is only part of "
+                 f"the total tax picture. Property taxes, sales taxes, and the cost of state services vary "
+                 f"significantly. When comparing {name} to states with income tax for financial planning "
+                 f"or relocation decisions, factor all major tax types and the cost of living together "
+                 f"for the most accurate after-tax comparison at your specific income level and lifestyle.")
+
     func_name = make_func_name(name)
 
     content = f'''import type {{ Metadata }} from 'next'
@@ -200,6 +321,61 @@ export default function {func_name}() {{
             <a href="/state-tax" className="text-sm text-[#1e3a5f] dark:text-blue-400 hover:underline">
               ← Compare all 50 state income tax rates
             </a>
+          </div>
+
+          <div className="mb-10">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">How {name} State Income Tax Works</h2>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+              {how_s1}
+            </p>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+              {how_s2}
+            </p>
+            <div className="bg-gray-100 dark:bg-gray-800 rounded-xl px-4 py-3 mb-4 text-sm font-mono text-gray-800 dark:text-gray-200">
+              {how_formula_text}
+            </div>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+              {how_s3}
+            </p>
+          </div>
+
+          <div className="mb-10">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Worked Example: $75,000 Income in {name}</h2>
+            <div className="bg-amber-50 dark:bg-amber-950/20 border border-amber-100 dark:border-amber-900/40 rounded-2xl p-6">
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                {ex_intro}
+              </p>
+              <div className="space-y-1 text-sm text-gray-700 dark:text-gray-300 mb-4 font-mono bg-white/60 dark:bg-black/20 rounded-xl px-4 py-3">
+                <div>Gross income:                         $75,000</div>
+                <div>Federal standard deduction:          -$15,750</div>
+                <div>Federal taxable income:               $59,250</div>
+                <div>Federal income tax:                    $7,949</div>
+                <div>{ex_state_row}</div>
+                <div className="font-bold pt-1">{ex_combined_row}</div>
+                <div>{ex_eff_row}</div>
+              </div>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                {ex_note}
+              </p>
+            </div>
+          </div>
+
+          <div className="mb-10">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Key Factors That Affect Your {name} Tax</h2>
+            <ul className="space-y-5">
+              <li>
+                <p className="font-semibold text-gray-900 dark:text-white mb-1">{kf1_h}</p>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{kf1_b}</p>
+              </li>
+              <li>
+                <p className="font-semibold text-gray-900 dark:text-white mb-1">{kf2_h}</p>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{kf2_b}</p>
+              </li>
+              <li>
+                <p className="font-semibold text-gray-900 dark:text-white mb-1">{kf3_h}</p>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{kf3_b}</p>
+              </li>
+            </ul>
           </div>
 
           <div className="pb-10">

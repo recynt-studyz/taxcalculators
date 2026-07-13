@@ -122,6 +122,61 @@ export default function UtahTaxCalculatorPage() {
             </a>
           </div>
 
+          <div className="mb-10">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">How Utah State Income Tax Works</h2>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+              Utah uses a 4.55% flat rate state income tax structure. Like most states, Utah starts its calculation from your federal Adjusted Gross Income (AGI), then applies state-specific adjustments — subtracting income Utah excludes from taxation (such as certain pension or Social Security income) and adding back any income Utah taxes that the federal government does not. After adjustments, the Utah standard deduction is applied, then the 4.55% flat rate is applied to arrive at state taxable income.
+            </p>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+              Utah income tax is collected through employer paycheck withholding for W-2 employees and through quarterly estimated payments for self-employed residents and those with significant non-wage income. The Utah state return is generally due April 15, aligned with federal returns. Part-year residents and nonresidents who earn income sourced in Utah must also file a Utah return for that income portion.
+            </p>
+            <div className="bg-gray-100 dark:bg-gray-800 rounded-xl px-4 py-3 mb-4 text-sm font-mono text-gray-800 dark:text-gray-200">
+              State Tax = (Utah taxable income) x 4.55% flat rate - State credits
+            </div>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+              Your Utah state income taxes are deductible on your federal Schedule A as part of the SALT (State and Local Tax) deduction, capped at $40,400 in 2026 under OBBBA. At the 22% federal bracket, paying $2,695 in Utah state income tax generates approximately $592 in federal tax savings, reducing the true net cost of your Utah taxes to about $2,103 for itemizing taxpayers.
+            </p>
+          </div>
+
+          <div className="mb-10">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Worked Example: $75,000 Income in Utah</h2>
+            <div className="bg-amber-50 dark:bg-amber-950/20 border border-amber-100 dark:border-amber-900/40 rounded-2xl p-6">
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                Jordan is a single filer earning $75,000 in Utah. This shows how federal and Utah state income tax are calculated together.
+              </p>
+              <div className="space-y-1 text-sm text-gray-700 dark:text-gray-300 mb-4 font-mono bg-white/60 dark:bg-black/20 rounded-xl px-4 py-3">
+                <div>Gross income:                         $75,000</div>
+                <div>Federal standard deduction:          -$15,750</div>
+                <div>Federal taxable income:               $59,250</div>
+                <div>Federal income tax:                    $7,949</div>
+                <div>Utah state tax (at 4.55% flat rate):  $2,695</div>
+                <div className="font-bold pt-1">Total (federal + Utah state):        $10,644</div>
+                <div>Combined effective rate:                14.2%</div>
+              </div>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                Moving to a no-income-tax state (Texas, Florida, Nevada, or Wyoming) would save Jordan approximately $2,695/year ($224/month) in state income taxes. However, no-income-tax states often fund services through higher property taxes, sales taxes, or other fees, so a complete comparison requires evaluating all taxes together, not just income tax.
+              </p>
+            </div>
+          </div>
+
+          <div className="mb-10">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Key Factors That Affect Your Utah Tax</h2>
+            <ul className="space-y-5">
+              <li>
+                <p className="font-semibold text-gray-900 dark:text-white mb-1">Utah Tax Rate and Annual Filing</p>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">Utah residents earning above the state filing threshold must file a Utah income tax return annually, typically due April 15. The 4.55% flat rate applies after Utah-specific deductions and any state tax credits. Employers withhold Utah state income tax from employee paychecks throughout the year using Utah withholding tables, and any balance owed or refund due is settled when the annual state return is filed. Self-employed Utah residents make quarterly estimated payments to the state in addition to their federal quarterly estimated tax payments.</p>
+              </li>
+              <li>
+                <p className="font-semibold text-gray-900 dark:text-white mb-1">Federal SALT Deduction Reduces Net State Tax Cost</p>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">State income taxes paid in Utah reduce your federal taxable income through the SALT deduction (capped at $40,400 in 2026 under OBBBA). For a Utah resident in the 22% federal bracket paying $2,695 in state income tax, the SALT deduction recovers approximately $592 in federal taxes, so the true after-federal-benefit cost of Utah state income tax is about $2,103. This offset only benefits taxpayers who itemize deductions on federal Schedule A rather than taking the standard deduction.</p>
+              </li>
+              <li>
+                <p className="font-semibold text-gray-900 dark:text-white mb-1">Total Tax Burden: State Income Tax Is One Piece</p>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">State income tax is one component of your total tax burden in Utah. Property taxes, local income taxes (in some Utah cities and counties), and state and local sales taxes also contribute to your overall cost of living. When comparing Utah to other states, evaluate all tax types together rather than income tax in isolation. Use the calculator above to see your combined federal and Utah state effective rate at your specific income level.</p>
+              </li>
+            </ul>
+          </div>
+
           <div className="pb-10">
             <FAQ questions={faqs} />
           </div>

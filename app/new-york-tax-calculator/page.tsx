@@ -122,6 +122,61 @@ export default function NewYorkTaxCalculatorPage() {
             </a>
           </div>
 
+          <div className="mb-10">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">How New York State Income Tax Works</h2>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+              New York uses a 10.9% top rate state income tax structure. Like most states, New York starts its calculation from your federal Adjusted Gross Income (AGI), then applies state-specific adjustments — subtracting income New York excludes from taxation (such as certain pension or Social Security income) and adding back any income New York taxes that the federal government does not. After adjustments, the New York standard deduction is applied, then the 10.9% top rate is applied to arrive at state taxable income.
+            </p>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+              New York income tax is collected through employer paycheck withholding for W-2 employees and through quarterly estimated payments for self-employed residents and those with significant non-wage income. The New York state return is generally due April 15, aligned with federal returns. Part-year residents and nonresidents who earn income sourced in New York must also file a New York return for that income portion.
+            </p>
+            <div className="bg-gray-100 dark:bg-gray-800 rounded-xl px-4 py-3 mb-4 text-sm font-mono text-gray-800 dark:text-gray-200">
+              State Tax = (New York taxable income) x 10.9% top rate - State credits
+            </div>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+              Your New York state income taxes are deductible on your federal Schedule A as part of the SALT (State and Local Tax) deduction, capped at $40,400 in 2026 under OBBBA. At the 22% federal bracket, paying $3,555 in New York state income tax generates approximately $782 in federal tax savings, reducing the true net cost of your New York taxes to about $2,773 for itemizing taxpayers.
+            </p>
+          </div>
+
+          <div className="mb-10">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Worked Example: $75,000 Income in New York</h2>
+            <div className="bg-amber-50 dark:bg-amber-950/20 border border-amber-100 dark:border-amber-900/40 rounded-2xl p-6">
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                Jordan is a single filer earning $75,000 in New York. This shows how federal and New York state income tax are calculated together.
+              </p>
+              <div className="space-y-1 text-sm text-gray-700 dark:text-gray-300 mb-4 font-mono bg-white/60 dark:bg-black/20 rounded-xl px-4 py-3">
+                <div>Gross income:                         $75,000</div>
+                <div>Federal standard deduction:          -$15,750</div>
+                <div>Federal taxable income:               $59,250</div>
+                <div>Federal income tax:                    $7,949</div>
+                <div>New York state tax (estimated 6.0% effective rate (top bracket: 10.9%)):  $3,555</div>
+                <div className="font-bold pt-1">Total (federal + New York state):        $11,504</div>
+                <div>Combined effective rate:                15.3%</div>
+              </div>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                Moving to a no-income-tax state (Texas, Florida, Nevada, or Wyoming) would save Jordan approximately $3,555/year ($296/month) in state income taxes. However, no-income-tax states often fund services through higher property taxes, sales taxes, or other fees, so a complete comparison requires evaluating all taxes together, not just income tax.
+              </p>
+            </div>
+          </div>
+
+          <div className="mb-10">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Key Factors That Affect Your New York Tax</h2>
+            <ul className="space-y-5">
+              <li>
+                <p className="font-semibold text-gray-900 dark:text-white mb-1">New York Tax Rate and Annual Filing</p>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">New York residents earning above the state filing threshold must file a New York income tax return annually, typically due April 15. The 10.9% top rate applies after New York-specific deductions and any state tax credits. Employers withhold New York state income tax from employee paychecks throughout the year using New York withholding tables, and any balance owed or refund due is settled when the annual state return is filed. Self-employed New York residents make quarterly estimated payments to the state in addition to their federal quarterly estimated tax payments.</p>
+              </li>
+              <li>
+                <p className="font-semibold text-gray-900 dark:text-white mb-1">Federal SALT Deduction Reduces Net State Tax Cost</p>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">State income taxes paid in New York reduce your federal taxable income through the SALT deduction (capped at $40,400 in 2026 under OBBBA). For a New York resident in the 22% federal bracket paying $3,555 in state income tax, the SALT deduction recovers approximately $782 in federal taxes, so the true after-federal-benefit cost of New York state income tax is about $2,773. This offset only benefits taxpayers who itemize deductions on federal Schedule A rather than taking the standard deduction.</p>
+              </li>
+              <li>
+                <p className="font-semibold text-gray-900 dark:text-white mb-1">Total Tax Burden: State Income Tax Is One Piece</p>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">State income tax is one component of your total tax burden in New York. Property taxes, local income taxes (in some New York cities and counties), and state and local sales taxes also contribute to your overall cost of living. When comparing New York to other states, evaluate all tax types together rather than income tax in isolation. Use the calculator above to see your combined federal and New York state effective rate at your specific income level.</p>
+              </li>
+            </ul>
+          </div>
+
           <div className="pb-10">
             <FAQ questions={faqs} />
           </div>
